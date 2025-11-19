@@ -1,7 +1,7 @@
 from Taste import Taste
 
 class GustoVegano(Taste):
-    def __init__(self, name: str, base_price: float, allergens: list[str], base_vegetale: str):
+    def __init__(self, name: str, base_price: float, base_vegetale: str, allergens: list[str] = None):
         super().__init__(name, base_price, allergens)
         self._base_vegetale = base_vegetale
 

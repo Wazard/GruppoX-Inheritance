@@ -1,5 +1,5 @@
 class Taste:
-    def __init__(self, name: str, base_price: float, allergens: list[str]):
+    def __init__(self, name: str, base_price: float, allergens: list[str] = None):
 
         #Constructor for Taste class.
         # param name: Name of the taste (ex., 'Vanilla', 'Chocolate')
@@ -8,7 +8,7 @@ class Taste:
 
         self._name = name
         self._base_price = base_price
-        self._allergens = allergens
+        self._allergens = allergens if allergens is not None else ["none"]
 
     # --- Getters ---
     def get_name(self) -> str:
