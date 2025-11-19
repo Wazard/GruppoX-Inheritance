@@ -21,12 +21,12 @@ class Menu:
         if taste in self.tastes:
             self._tastes.remove(taste)
         return False
-    
+
     def list_tastes(self) -> str:
-        return ("\n").join(str(t) for t in self._tastes)
+        return ("\n").join((str(t) if t is Taste else (t.descrizione_premium() if t is GustoPremium else t.descrizione_vegano())) for t in self._tastes)
     
 
-""" vanilla = Taste("Vanilla", 2.50, ["Milk"])
+vanilla = Taste("Vanilla", 2.50, ["Milk"])
 chocolate = Taste("Chocolate", 3.00, ["Milk", "Soy"])
 menu = Menu([vanilla, chocolate])
-print(menu.list_tastes()) """
+print(menu.list_tastes())
