@@ -2,7 +2,7 @@ class Taste:
     def __init__(self, name: str, base_price: float, allergens: list[str]):
 
         #Constructor for Taste class.
-        # param name: Name of the taste (e.g., 'Vanilla', 'Chocolate')
+        # param name: Name of the taste (ex., 'Vanilla', 'Chocolate')
         # param base_price: Base price of the taste as a float
         # param allergens: List of allergens associated with this taste
 
@@ -44,3 +44,8 @@ class Taste:
 
         allergens_str = ", ".join(self._allergens) if self._allergens else "None"
         return f"Taste: {self._name}, Price: {self._base_price:.2f}, Allergens: {allergens_str}"
+
+    def __repr__(self):
+
+        #Return description on __repr__ call
+        return self.description()
